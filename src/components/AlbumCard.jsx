@@ -4,7 +4,7 @@ import { viewAlbumAction, viewArtistAction } from "../redux/action/index";
 
 const AlbumCard = (props) => {
   const dispatch = useDispatch();
-  const artist = useDispatch();
+
   return (
     <div className="col text-center">
       <Link onClick={() => dispatch(viewAlbumAction(props))} to={"/album"}>
@@ -17,7 +17,7 @@ const AlbumCard = (props) => {
         </Link>
         <br />
 
-        <Link onClick={() => artist(viewArtistAction(props))} className="text-decoration-none" to={"/artist"}>
+        <Link onClick={() => dispatch(viewArtistAction(props))} className="text-decoration-none" to={"/artist"}>
           Artist: {props.artist}
         </Link>
       </p>

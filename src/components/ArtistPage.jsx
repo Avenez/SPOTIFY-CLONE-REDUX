@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import TopNavLinks from "./TopNavLinks";
 
-const ArtistPage = (props) => {
+const ArtistPage = () => {
   const seeArtist = useSelector((state) => state.artist);
   const [name, setName] = useState([]);
 
