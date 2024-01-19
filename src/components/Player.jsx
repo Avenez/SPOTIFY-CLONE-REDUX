@@ -54,9 +54,7 @@ const Player = () => {
           </Col>
           <Col xs={6} className=" playerControls mt-1">
             <Row>
-              <audio ref={audioRef}>
-                <source src={song.preview} type="audio/mp3" />
-              </audio>
+              <audio ref={audioRef} src={song.preview} type="audio/mp3"></audio>
               <div className="d-flex justify-content-between">
                 <Link className="player-buttons">
                   <img src={shuffle} alt="shuffle" />
