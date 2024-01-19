@@ -63,7 +63,11 @@ const Player = () => {
                   <img src={previous} alt="previous" />
                 </Link>
                 <Link className="player-buttons">
-                  <img src={play} alt="play" onClick={togglePlay} />
+                  {isPlaying ? (
+                    <i class="bi bi-pause-fill text-secondary fs-3 p-0 m-0" onClick={togglePlay}></i>
+                  ) : (
+                    <i class="bi bi-play-fill text-secondary fs-3 p-0 m-0" onClick={togglePlay}></i>
+                  )}
                 </Link>
                 <Link className="player-buttons">
                   <img src={next} alt="next" />
