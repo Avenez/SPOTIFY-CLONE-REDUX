@@ -5,7 +5,6 @@ import ArtistPage from "./components/ArtistPage";
 import Main from "./components/Main";
 import Player from "./components/Player";
 import TrackList from "./components/TrackList";
-import VerticalSideBar from "./components/VerticalSidebar";
 import SearchPage from "./components/Search";
 import PageNotFound from "./components/PageNotFoud";
 import SidebarOff from "./components/SidebarOff";
