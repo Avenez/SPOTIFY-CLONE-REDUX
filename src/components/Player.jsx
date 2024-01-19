@@ -13,11 +13,19 @@ const Player = () => {
   const favSongs = useSelector((state) => state.favouriteSongs.favSongs);
   const song = useSelector((state) => state.songPlayer.songObj);
   const dispatch = useDispatch();
+
+  const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
+
+  useEffect(() => {
+    if (audioRef.current) {
+      isPlaying ? audioRef.current.play() : audioRef.current.pause();
+    }
+  }, [isPlaying]);
 
   return (
     <Container fluid className="fixed-bottom bg-container pt-1">
@@ -46,7 +54,7 @@ const Player = () => {
           </Col>
           <Col xs={6} className=" playerControls mt-1">
             <Row>
-              <audio>
+              <audio ref={audioRef}>
                 <source src={song.preview} type="audio/mp3" />
               </audio>
               <div className="d-flex justify-content-between">
@@ -57,7 +65,7 @@ const Player = () => {
                   <img src={previous} alt="previous" />
                 </Link>
                 <Link className="player-buttons">
-                  <img src={play} alt="play" />
+                  <img src={play} alt="play" onClick={togglePlay} />
                 </Link>
                 <Link className="player-buttons">
                   <img src={next} alt="next" />
